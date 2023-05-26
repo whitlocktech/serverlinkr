@@ -8,6 +8,7 @@ async function httpCreateUser(req, res) {
     const user = await createUser(username, password, role)
     res.status(201).json(user)
   } catch (error) {
+    console.log('Error Creating User', error)
     res.status(500).json(error)
   }
 }

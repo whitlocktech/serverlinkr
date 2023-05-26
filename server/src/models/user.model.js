@@ -11,4 +11,4 @@ async function createUser(username, password, role) {
   }
 }
 
-module.exports = createUser
+module.exports = {createUser}
