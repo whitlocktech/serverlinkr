@@ -1,9 +1,10 @@
 const express = require('express')
 
-const authRouter = require('./auth/auth.routes')
-
 const v1Router = express.Router()
 
-v1Router.use('/auth', authRouter)
+const linksRouter = require('./links/links.routes')
+
+v1Router.use('/links', linksRouter)
+
 
 module.exports = v1Router

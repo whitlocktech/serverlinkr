@@ -1,31 +1,26 @@
 const express = require('express')
 const cors = require('cors')
-const helmet = require('helmet')
 const morgan = require('morgan')
-
+const helmet = require('helmet')
 const path = require('path')
+
+const apiRouter = require('./router/api.router')
 
 const app = express()
 
-const apiRouter = require('./routes/api')
+app.use(cors({
+  origin: 'http://localhost:3000'
+}))
 
-app.use(cors(
-  {
-    origin: 'http://localhost:3000'
-  }
-))
-
+app.use(morgan('dev'))
 app.use(helmet())
-
-app.use(morgan('combined'))
-
 app.use(express.json())
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
 app.use('/api', apiRouter)
 
 app.get('*', (req, res) => { 
-  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
+  res.send(path.join(__dirname, '..', 'public', 'index.html'))
 })
 
 module.exports = app

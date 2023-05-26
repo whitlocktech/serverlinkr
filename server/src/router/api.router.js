@@ -1,8 +1,8 @@
 const express = require('express')
 
-const v1Router = require('./v1/v1')
-
 const apiRouter = express.Router()
+
+const v1Router = require('./v1/v1.router')
 
 apiRouter.use('/v1', v1Router)
 
