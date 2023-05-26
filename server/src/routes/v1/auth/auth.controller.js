@@ -12,4 +12,4 @@ async function httpCreateUser(req, res) {
   }
 }
 
-module.exports = httpCreateUser
+module.exports = {httpCreateUser}
