@@ -1,3 +1,5 @@
+import './linksContainer.styles.scss'
+
 import LinksCard from "../links/linksCard.component"
 
 const Links = [{
