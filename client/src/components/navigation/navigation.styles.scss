@@ -1,0 +1,16 @@
+.navigation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  
+  .nav-link {
+    align-items: top;
+    
+    .App-logo{
+      width:auto;
+      height: 200px;
+    }
+  }
+}

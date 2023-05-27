@@ -1,0 +1,60 @@
+.link-card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+  max-height: 350px;
+}
+
+.link-card-header {
+  margin-bottom: 10px;
+}
+
+.link-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.link-card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-image {
+  height: 75px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.link-image img {
+  width: 100%;
+  height: auto;
+}
+
+.link-url {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.link-description {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.link-keywords {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.link-keyword {
+  font-size: 12px;
+  background-color: #eee;
+  color: #333;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}

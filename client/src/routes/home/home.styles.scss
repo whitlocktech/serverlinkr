@@ -1,0 +1,12 @@
+.home {
+  min-height: 100vh;
+  background-color: #5c5c5c;
+
+  .navigation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+  }
+}
