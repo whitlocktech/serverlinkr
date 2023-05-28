@@ -10,8 +10,8 @@ const server = http.createServer(app)
 
 async function startServer() {
 
+  await mongoConnect()
   server.listen(PORT, () => {
-    mongoConnect()
     console.log(`Server is running on port ${PORT}`)
   })
 }

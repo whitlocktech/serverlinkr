@@ -1,7 +1,7 @@
 const linksDatabase = require('./links.mongo')
 
 async function getAllLinks() {
-  return await linksDatabase
+  return linksDatabase
     .find({})
     .sort({ _id: 1 })
     .catch((error) => {
@@ -11,7 +11,7 @@ async function getAllLinks() {
 }
 
 async function saveLink(link) {
-  await linksDatabase.findOneAndUpdate({
+  return linksDatabase.findOneAndUpdate({
     _id: link._id,
   }, link, {
     upsert: true,
@@ -28,18 +28,18 @@ async function updateLink(link) {
 }
 
 async function deleteLink(link) {
-  await linksDatabase.deleteOne({
+  return linksDatabase.deleteOne({
     _id: link._id,
   })
 }
 
 async function getLinkById(id) {
-  return await linksDatabase.findOne({
+  return linksDatabase.findOne({
     _id: id,
   })
 }
 async function getLinksByKeyword(keyword) {
-  return await linksDatabase.find({
+  return linksDatabase.find({
     keywords: keyword,
   })
 }
