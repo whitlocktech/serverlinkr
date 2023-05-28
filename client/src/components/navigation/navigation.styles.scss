@@ -1,16 +1,54 @@
-.navigation{
+.navigation {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 100px;
   width: 100%;
-  
+
   .nav-link {
-    align-items: top;
-    
-    .App-logo{
-      width:auto;
+    align-items: flex-start;
+
+    .App-logo {
+      width: auto;
       height: 200px;
     }
   }
+
+  .nav-link-left {
+    justify-self: flex-start;
+    margin-left: 20px;
+    cursor: pointer;
+
+    .menu-popup {
+      position: absolute;
+      left: 0;
+      flex-direction: column;
+      background-color: #5c5c5c;
+      padding: 10px;
+      border:#5c5c5c solid 1px;
+      border-radius: 4px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+
+      .menu-link {
+        color: #000;
+        text-decoration: none;
+        margin-bottom: 5px;
+
+        &:hover {
+          color: #fff;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .nav-link-right {
+    justify-self: flex-end;
+    margin-right: 20px;
+  }
+}
+
+.nav-link-left:hover + .menu-popup,
+.menu-popup:hover {
+  display: flex;
 }

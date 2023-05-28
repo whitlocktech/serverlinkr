@@ -1,0 +1,45 @@
+.edit-link-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  max-height: fit-content;
+}
+
+.edit-link-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  .title {
+    margin-right: 10px;
+  }
+
+  button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .edit-form-input {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .form-input:last-child {
+    margin-right: 0;
+  }
+
+  .edit-form-button {
+    flex-shrink: 0;
+  }
+}
