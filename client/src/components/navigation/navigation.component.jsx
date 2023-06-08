@@ -9,7 +9,6 @@ import LogoutIcon from '../../assets/logout.png'
 import MenuIcon from '../../assets/menu.png'
 import AddLinkForm from '../addLinkForm/addLinkForm.component'
 import Button from '../button/button.component'
-// import EditLinkForm from '../editLinkForm/editLinkForm.component'
 
 import logo from '../../assets/logo_transparent.png'
 
@@ -17,7 +16,6 @@ const Navigation = () => {
   const [isLoggedIn, setLoggedIn] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
   const [showAddLinkPopup, setShowAddLinkPopup] = useState(false)
-  const [showEditLinkPopup, setShowEditLinkPopup] = useState(false)
 
   const handleMouseEnter = () => { 
     setShowMenu(true)
@@ -37,9 +35,6 @@ const Navigation = () => {
     setShowAddLinkPopup(false)
   }
 
-  const toggleEditLinkPopup = () => { 
-    setShowEditLinkPopup(!showEditLinkPopup)
-  }
   return (
     <div className="navigation">
       <div className='nav-link-left'
@@ -55,9 +50,9 @@ const Navigation = () => {
             onClick={toggleAddLinkPopup}>
                 Add Link
             </p>
-            <p className="menu-link"
-              onClick={toggleEditLinkPopup}
-            >Edit Links</p>
+            <Link to='/editlinks' className='nav-link-right'>
+              Edit Links
+            </Link>
           </div>
         )}
       </div>
@@ -79,11 +74,6 @@ const Navigation = () => {
           <AddLinkForm />
         </div>
       )}
-      {/* showEditLinkPopup && (
-        <div className='edit-link-popup'>
-          <EditLinkForm link={{ ...link, id: link._id }} />
-        </div>
-      )*/}
     </div>
   )
 }

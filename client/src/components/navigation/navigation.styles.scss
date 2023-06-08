@@ -45,6 +45,12 @@
   .nav-link-right {
     justify-self: flex-end;
     margin-right: 20px;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

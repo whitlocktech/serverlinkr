@@ -4,6 +4,7 @@ import './App.css'
 
 import Home from './routes/home/home.component'
 import LinksContainer from './routes/linksContainer/linksContainer.component'
+import EditLinks from './routes/editLinks/editLinks.compnent'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}>
           <Route index element={<LinksContainer />} />
+          <Route path="editlinks" element={<EditLinks />} />
         </Route>
       </Routes>
     </ApiProvider>
