@@ -15,7 +15,7 @@ async function createUser(username, password) {
 
 async function getUserByUsername(username) { 
   try {
-    return await userDatabase.getUserByUsername(username)
+    return await userDatabase.findOne(username)
   } catch (error) { 
     throw error
   }
@@ -23,7 +23,7 @@ async function getUserByUsername(username) {
 
 async function getUserById(id) { 
   try {
-    return await userDatabase.getUserById(id)
+    return await userDatabase.findById(id)
   } catch (error) { 
     throw error
   }
