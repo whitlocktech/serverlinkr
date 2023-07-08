@@ -9,12 +9,14 @@ const {
   httpGetLinksByKeyword,
 } = require('./links.controller')
 
+const { isLoggedIn } = require('../../../utils/auth')  
+
 const linksRouter = express.Router()
 
-linksRouter.post('/', httpCreateLink)
+linksRouter.post('/', isLoggedIn, httpCreateLink)
 linksRouter.get('/', httpGetAllLinks)
-linksRouter.patch('/', httpUpdateLink)
-linksRouter.delete('/:id', httpDeleteLink)
+linksRouter.patch('/', isLoggedIn, httpUpdateLink)
+linksRouter.delete('/:id', isLoggedIn, httpDeleteLink)
 linksRouter.get('/:id', httpGetLinkById)
 linksRouter.get('/keyword/:keyword', httpGetLinksByKeyword)
 

@@ -51,8 +51,28 @@ function generateToken(user) {
   return jwt.sign(payload, JWT_SECRET, options)
 }
 
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next()
+  }
+  const authHeader = req.headers.authorization
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    const token = authHeader.substring(7)
+    jwt.verify(token, JWT_SECRET, (err, decoded) => {
+      if (err) {
+        return res.status(401).json({ message: 'Unauthorized' })
+      }
+      req.user = decoded
+      return next()
+    })
+  } else {
+    return res.status(401).json({ message: 'Unauthorized' })
+  }
+}
+
 module.exports = {
   passport,
   generateToken,
+  isLoggedIn,
 }
 
